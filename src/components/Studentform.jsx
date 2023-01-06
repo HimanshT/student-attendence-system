@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 //getting data from local storage
 const getLocalData = () => {
@@ -42,7 +41,6 @@ const Studentform = () => {
                 <input type="text" id="rollno" value={data.rollno} name="rollno" onChange={onChange} /><br />
                 <button type="submit">Submit</button>
             </form>
-            <Link to="/">Back</Link>
         </>
     )
 }

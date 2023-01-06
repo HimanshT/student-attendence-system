@@ -1,0 +1,42 @@
+.displayData {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #275DAD;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+table {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table th {
+    border: 1px solid #000;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #275DAD;
+}
+
+table td {
+    border: 1px solid #000;
+    padding: 10px;
+    font-size: 18px;
+    color: #000;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

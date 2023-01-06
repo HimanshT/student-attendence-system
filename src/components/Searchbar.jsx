@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-
+import './Searchbar.css'
 //getting data from local storage
 const getLocalData = () => {
     const lists = localStorage.getItem("student");
@@ -63,7 +62,7 @@ const Searchbar = () => {
     return (
         <div>
             <h1>Find the student</h1>
-            <p>Find by Name</p>
+            <p className='instruction'>Find by Name</p>
             <form onSubmit={handleSubmit1}>
                 <label htmlFor="username">Student Name</label>
                 <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -71,7 +70,7 @@ const Searchbar = () => {
             </form>
             <br />
 
-            <p>Or find by roll number</p>
+            <p className='instruction'>Find by roll number</p>
             <form onSubmit={handleSubmit2}>
                 <label htmlFor="rollno">Student Roll Number</label>
                 <input type="text" id="rollno" name="rollno" value={rollno} onChange={(e) => setRollno(e.target.value)} />
@@ -79,34 +78,33 @@ const Searchbar = () => {
             </form>
             <br />
             {
-                user && <div>
+                user && <div className='user'>
                     <h1>Student Details</h1>
                     <p>Name: {user.username}</p>
                     <p>Roll Number: {user.rollno}</p>
-                    <p>Status:{user.status}</p>
-                    <p>Intime:{user.intime}</p>
-                    <p>Outime:{user.outime}</p>
+                    <p>Status: {user.status}</p>
+                    <p>Intime: {user.intime}</p>
+                    <p>Outime: {user.outime}</p>
                 </div>
             }
             {user.status === 'NA' &&
-                <><button onClick={() => {
+                <><button className="btn" onClick={() => {
                     user.status = 'Present';
                     user.intime = new Date().toLocaleTimeString();
                     setUser(user);
                     update();
-                }}>Present</button> <button onClick={() => {
+                }}>Present</button> <button className="btn" onClick={() => {
                     user.status = 'Absent';
                     setUser(user);
                     update();
                 }}>Absent</button></>
             }
-            {user.status === 'Present' && <button onClick={() => {
+            {user.status === 'Present' && <button className="btn" onClick={() => {
                 user.status = 'Leave';
                 user.outime = new Date().toLocaleTimeString();
                 setUser(user);
                 update();
             }}>Leave</button>}
-            <Link to="/">Back</Link>
         </div >
     )
 }

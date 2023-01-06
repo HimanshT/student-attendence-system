@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import './Allstudents.css'
 //getting data from local storage
 const getLocalData = () => {
   const lists = localStorage.getItem("student");
@@ -19,9 +18,11 @@ const Allstudents = () => {
   return (
     <div>
       <h1>All Students</h1>
-      <h2>Total Students:{totalStudents}</h2>
-      <h2>Present:{presentStudents}</h2>
-      <h2>Absent:{totalStudents - presentStudents}</h2>
+      <div className='displayData'>
+        <h2>Total Students:{totalStudents}</h2>
+        <h2>Present:{presentStudents}</h2>
+        <h2>Absent:{totalStudents - presentStudents}</h2>
+      </div>
       <table>
         <thead>
           <tr>
@@ -46,9 +47,6 @@ const Allstudents = () => {
           })}
         </tbody>
       </table>
-      <br />
-
-      <Link to="/">Back</Link>
     </div>
   )
 }
