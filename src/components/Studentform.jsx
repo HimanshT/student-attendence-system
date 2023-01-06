@@ -20,6 +20,8 @@ const Studentform = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setstudent([...student, data]);//adding student object to student array
+        alert("Student Added");
+        setData({ username: "", rollno: "", status: "NA", intime: "NA", outime: "NA" });
     }
 
     //saving data to local storage
@@ -39,7 +41,7 @@ const Studentform = () => {
                 <input type="text" id="username" value={data.username} name="username" onChange={onChange} /><br />
                 <label htmlFor="rollno">Roll No</label>
                 <input type="text" id="rollno" value={data.rollno} name="rollno" onChange={onChange} /><br />
-                <button type="submit">Submit</button>
+                <button type="submit" style={{ cursor: 'pointer', }}>Submit</button>
             </form>
         </>
     )
